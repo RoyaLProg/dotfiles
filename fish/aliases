@@ -1,0 +1,39 @@
+# GENERIC alias dotfile.  Put everything that is not OS specific in this dotfile.
+
+alias l='la -la'
+alias ll='ls -la'
+alias vi='nvim'
+alias vim='nvim'
+alias h='history'
+alias wtr='curl http://wttr.in/Grand_Junction'
+
+alias cat='bat --theme=ansi'
+alias dk='docker'
+alias less='bat --theme=ansi'
+alias lr='fd -aH -t f'
+alias lc='lolcat'
+alias md5='openssl md5'
+alias pe='printenv'
+alias sha1='openssl sha1'
+alias sha256='openssl sha256'
+alias gwd='cd ~/src'
+alias gdd='cd ~/data'
+alias gwdd='cd ~/src/dotfiles'
+alias gwf='cd ~/src/qmk/qmk_firmware'
+alias strip-colors='sed "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias n='npm'
+alias hh='hstr'
+
+# git aliases
+alias g='git'
+alias ga='git add .'
+alias gcl='git clone'
+alias gd="git diff HEAD -- ':!package-lock.json'"
+alias gst='git status'
+alias gbr='git branch'
+alias gps='git push'
+
