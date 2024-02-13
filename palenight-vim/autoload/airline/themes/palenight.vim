@@ -23,7 +23,7 @@ let s:airline_error = [s:colors.black.gui, s:colors.red.gui, s:colors.black.cter
 " Normal
 
 let s:airline_a_normal = [s:colors.black.gui, s:colors.blue_purple.gui, s:colors.black.cterm, s:colors.blue_purple.cterm]
-let s:airline_b_normal = [s:colors.white.gui, s:colors.white_mask_3.gui, s:colors.white.cterm, s:colors.white_mask_3.cterm]
+let s:airline_b_normal = [s:colors.white.gui, s:colors.blue_purple.gui, s:colors.white.cterm, s:colors.white_mask_3.cterm]
 let s:airline_c_normal = [s:colors.white.gui, s:colors.white_mask_1.gui, s:colors.white.cterm, s:colors.white_mask_1.cterm, s:wrap_opts(['italic'])]
 let g:airline#themes#palenight#palette.normal = airline#themes#generate_color_map(s:airline_a_normal, s:airline_b_normal, s:airline_c_normal)
 
@@ -39,7 +39,7 @@ let g:airline#themes#palenight#palette.normal_modified.airline_error = s:airline
 " ---
 " Insert
 
-let s:airline_a_insert = [s:colors.black.gui, s:colors.blue_purple.gui, s:colors.black.cterm, s:colors.green.cterm]
+let s:airline_a_insert = [s:colors.black.gui, s:colors.blue.gui, s:colors.black.cterm, s:colors.green.cterm]
 let s:airline_b_insert = s:airline_b_normal
 let s:airline_c_insert = s:airline_c_normal
 let g:airline#themes#palenight#palette.insert = airline#themes#generate_color_map(s:airline_a_insert, s:airline_b_insert, s:airline_c_insert)
@@ -122,6 +122,6 @@ let s:airline_tabfill = [s:colors.white.gui, s:colors.black.gui, s:colors.white.
 let g:airline#themes#palenight#palette.tabline = {
       \ 'airline_tabsel':  s:airline_tabsel,
       \ 'airline_tabfill':  s:airline_tabfill,
-      \ 'airline_tabmod': [s:colors.black.gui, s:colors.blue_purple.gui, s:colors.black.cterm, s:colors.blue_purple.cterm, s:wrap_opts(['bold', 'italic'])],
+      \ 'airline_tabmod': [s:colors.black.gui, s:colors.blue.gui, s:colors.black.cterm, s:colors.blue_purple.cterm, s:wrap_opts(['bold', 'italic'])],
       \ 'airline_tabhid': [s:colors.white.gui, s:colors.white_mask_1.gui, s:colors.white.cterm, s:colors.white_mask_1.cterm]
       \ }
