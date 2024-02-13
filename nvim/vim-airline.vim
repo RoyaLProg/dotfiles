@@ -28,8 +28,7 @@ let g:airline#extensions#tabline#buffer_idx_format = {
         \ '7': '7 ',
         \ '8': '8 ',
         \ '9': '9 '
-        \}
-" unicode symbols
+        \} " unicode symbols
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 let g:airline_symbols.crypt = '🔒'
@@ -57,3 +56,17 @@ let g:airline#extensions#tabline#buffers_label = 'BUFFERS'
 let g:airline#extensions#tabline#tabs_label = 'TABS'
 let g:airline_symbols.modified = ' ●'
 
+" removing section y
+let g:airline_section_y = ''
+
+" removing section x
+let g:airline_section_x = ''
+
+" removing section c
+let g:airline_section_c = ' '
+
+" changing section z to display column and line number
+let g:airline_section_z = airline#section#create(['%3l:%-2c'])
+
+" changing section a to display the current vim window number
+let g:airline_section_a = airline#section#create([winnr()])
