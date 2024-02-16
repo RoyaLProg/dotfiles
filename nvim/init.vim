@@ -5,6 +5,7 @@
 "██   ████   ██ ██      ██ ██   ██  ██████
 
 
+set noexpandtab
 set linebreak
 set nowrap
 set ruler
@@ -13,15 +14,16 @@ set showmatch
 syntax on
 set noswapfile
 set mouse=a
-set shiftwidth=4
+set shiftwidth=0
 set tabstop=4
+set softtabstop=-1
 set autoindent
 set smartindent
 set relativenumber
 set splitbelow
 set splitright
 set wildignorecase
-
+filetype plugin indent off
 command! W :w
 command! WQ :wq
 command! Wq :wq
@@ -55,14 +57,12 @@ nnoremap b8 <Plug>AirlineSelectTab8
 nnoremap b9 <Plug>AirlineSelectTab9
 nnoremap b0 <Plug>AirlineSelectTab0
 
-nnoremap ª :m .+1<CR>==
-nnoremap º :m .-2<CR>==
-
-inoremap ª <Esc>:m .+1<CR>==gi
-inoremap º <Esc>:m .-2<CR>==gi
-
-vnoremap ª :m '>+1<CR>gv=gv
-vnoremap º :m '<-2<CR>gv=gv
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 iabbrev strlen int	ft_strlen(char *str)<enter>{<enter>int	i;<enter><enter>i = 0;<enter><enter>while (str[i])<enter>i++;<enter>return (i);<enter>}
 
@@ -96,8 +96,9 @@ call plug#begin()
 	Plug 'kdheepak/lazygit.nvim'
 	Plug 'voldikss/vim-floaterm'
 	Plug 'rhysd/vim-clang-format'
-	Plug 'chilledheart/vim-clangd'
 	Plug 'nvim-lua/plenary.nvim'
+	Plug 'ycm-core/YouCompleteMe'
+"	Plug 'chilledheart/vim-clangd'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""
@@ -166,4 +167,4 @@ aug kitty_cursor
 	au Colorscheme * set guicursor=n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor
 aug END
 
-
+let g:python_recommended_style = 0
