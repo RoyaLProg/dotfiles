@@ -98,22 +98,29 @@ call plug#begin()
 	Plug 'rhysd/vim-clang-format'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'ycm-core/YouCompleteMe'
+	Plug 'vim-syntastic/syntastic'
 "	Plug 'chilledheart/vim-clangd'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""
-"              		 NERDTREE
+"              		  SYNTASTIC
 """""""""""""""""""""""""""""""""""""""""""""
 
-" Start NERDTree when Vim is started without file arguments.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p | endif
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" Open the existing NERDTree on each new tab.
-"autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
-" Refresh NERDTREE whith <cr>r
-nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""
+"                     CLANG-FORMAT
+"""""""""""""""""""""""""""""""""""""""""""""
+
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""
@@ -137,25 +144,6 @@ colorscheme palenight
 """""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
 runtime vim-airline.vim
-"""""""""""""""""""""""""""""""""""""""""""""
-"              		  SYNTASTIC
-"""""""""""""""""""""""""""""""""""""""""""""
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"""""""""""""""""""""""""""""""""""""""""""""
-"                     CLANG-FORMAT
-"""""""""""""""""""""""""""""""""""""""""""""
-
-let g:clang_format#detect_style_file = 1
-let g:clang_format#auto_format = 1
 
 """""""""""""""""""""""""""""""""""""""""""""
 "					 CURSOR
@@ -166,5 +154,19 @@ aug kitty_cursor
 	au!
 	au Colorscheme * set guicursor=n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor
 aug END
+
+"""""""""""""""""""""""""""""""""""""""""""""
+"              		 NERDTREE
+"""""""""""""""""""""""""""""""""""""""""""""
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p | endif
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Open the existing NERDTree on each new tab.
+"autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+" Refresh NERDTREE whith <cr>r
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 let g:python_recommended_style = 0
