@@ -1,1 +1,1 @@
-vim.keymap.set('n', "<Space>'", ":FloatermNew<CR>", {})
+vim.keymap.set('n', '<Space>\'', ":FloatermNew<CR>", {})
