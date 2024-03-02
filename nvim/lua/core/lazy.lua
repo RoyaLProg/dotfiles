@@ -51,5 +51,11 @@ require("lazy").setup({
                 desc = 'Create a selection for selected text or word under the cursor',
             },
         },
-}
+	},
+	{
+		'crnvl96/lazydocker.nvim',
+		dependencies = {
+		   "MunifTanjim/nui.nvim",
+		}
+	}
 })
