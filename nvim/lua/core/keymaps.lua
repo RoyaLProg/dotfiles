@@ -19,3 +19,4 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.wrap = false
 vim.opt.showmatch = true
+vim.opt.mouse = ''
