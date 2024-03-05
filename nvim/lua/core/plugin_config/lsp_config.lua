@@ -15,15 +15,21 @@ local on_attach = function ( )
 	vim.keymap.set('n', '<leader>ca', vim.lsp.buf.codeaction, {})
 end
 
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 -- init language servers
 require("lspconfig").lua_ls.setup {
+	capabilities = capabilities,
 	on_attach = on_attach
 }
 require("lspconfig").clangd.setup  {
+	capabilities = capabilities,
 	on_attach = on_attach
 }
 
 require("lspconfig").tsserver.setup  {
+	capabilities = capabilities,
 	on_attach = on_attach
 }
 
