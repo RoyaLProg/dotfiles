@@ -20,3 +20,5 @@ vim.opt.splitright = true
 vim.opt.wrap = false
 vim.opt.showmatch = true
 vim.opt.mouse = ''
+
+vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', {})
