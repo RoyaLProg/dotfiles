@@ -75,4 +75,9 @@ require("lazy").setup({
 			'hrsh7th/cmp-nvim-lsp'
 		},
 	},
+	{
+		"michaelrommel/nvim-silicon",
+		lazy = true,
+		cmd = "Silicon",
+	},
 })
