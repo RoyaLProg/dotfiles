@@ -11,8 +11,8 @@ local on_attach = function ( )
 	vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 
-	vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
-	vim.keymap.set('n', '<leader>ca', vim.lsp.buf.codeaction, {})
+	vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, {})
+	vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, {})
 end
 
 
@@ -33,9 +33,8 @@ require("lspconfig").tsserver.setup  {
 	on_attach = on_attach
 }
 
-require("lspconfig").cssls.setup  {
+require("lspconfig").cssls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach
 }
-
 
