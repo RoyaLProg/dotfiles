@@ -20,7 +20,7 @@ if pidof swaybg > /dev/null; then
 fi
 
 # Retrieve image files
-PICS=($(ls "${wallDIR}" | grep -E ".jpg$|.jpeg$|.png$|.gif$"))
+PICS=($(find ${wallDIR} -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" \) | sed -e "s@${wallDIR}/@@g" ))
 RANDOM_PIC="${PICS[$((RANDOM % ${#PICS[@]}))]}"
 RANDOM_PIC_NAME="${#PICS[@]}. random"
 
@@ -59,18 +59,19 @@ main() {
   # Find the index of the selected file
   pic_index=-1
   for i in "${!PICS[@]}"; do
-    filename=$(basename "${PICS[$i]}")
+	   filename=${PICS[i]}
     if [[ "$filename" == "$choice"* ]]; then
       pic_index=$i
       break
     fi
   done
 
+	echo $choice $pic_index
+
   if [[ $pic_index -ne -1 ]]; then
     swww img "${wallDIR}/${PICS[$pic_index]}" $SWWW_PARAMS
   else
-    echo "Image not found."
-    exit 1
+    echo "Image not found." exit 1
   fi
 }
 
