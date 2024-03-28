@@ -80,4 +80,5 @@ require("lazy").setup({
 		lazy = true,
 		cmd = "Silicon",
 	},
+	'folke/todo-comments.nvim',
 })
