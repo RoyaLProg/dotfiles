@@ -36,4 +36,12 @@ alias gd="git diff HEAD -- ':!package-lock.json'"
 alias gst='git status'
 alias gbr='git branch'
 alias gps='git push'
+alias gpl='git pull'
+alias gco='git checkout'
+alias gcm='git commit -m'
+alias gca='git commit --amend'
+
+# personna aliases
+
+alias lg 'lazygit'
 
