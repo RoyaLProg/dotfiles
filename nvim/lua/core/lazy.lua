@@ -96,5 +96,9 @@ require("lazy").setup({
 	    --   If not available, we use `mini` as the fallback
 	    "rcarriga/nvim-notify",
 	    }
+	},
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false;
 	}
 })

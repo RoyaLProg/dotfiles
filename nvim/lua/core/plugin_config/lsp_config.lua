@@ -15,7 +15,6 @@ local on_attach = function ( )
 	vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, {})
 end
 
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- init language servers
