@@ -2,7 +2,7 @@ require("mason").setup()
 
 -- install language servers
 require("mason-lspconfig").setup({
-	ensure_installed = {"lua_ls", "clangd", "tsserver", "cssls"}
+	ensure_installed = {"lua_ls", "clangd", "ts_ls", "cssls"}
 })
 
 local on_attach = function ( )
@@ -27,7 +27,7 @@ require("lspconfig").clangd.setup  {
 	on_attach = on_attach
 }
 
-require("lspconfig").tsserver.setup  {
+require("lspconfig").ts_ls.setup  {
 	capabilities = capabilities,
 	on_attach = on_attach
 }

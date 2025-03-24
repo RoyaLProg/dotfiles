@@ -30,7 +30,7 @@ require("lazy").setup({
         }
 	},
 	'voldikss/vim-floaterm',
-	'nvim-tree/nvim-tree.lua',
+	--'nvim-tree/nvim-tree.lua',
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	"williamboman/mason.nvim",
 	'williamboman/mason-lspconfig.nvim',
@@ -100,5 +100,21 @@ require("lazy").setup({
 	{
 		"OXY2DEV/markview.nvim",
 		lazy = false;
+	},
+	{
+		"sphamba/smear-cursor.nvim",
+		opts = {
+			smear_between_buffers = true,
+			smear_insert_mode = true,
+			swiftness = 0.8,
+			trailing_stiffness = 0.5,
+			distance_stop_animating = 0.5
+		},
+	},
+	{
+		"karb94/neoscroll.nvim",
+		opts = {
+			hide_cursor = false
+		},
 	}
 })
