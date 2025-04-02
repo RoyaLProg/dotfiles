@@ -84,16 +84,16 @@ require("lazy").setup({
 		"OXY2DEV/markview.nvim",
 		lazy = false;
 	},
-	{
-		"sphamba/smear-cursor.nvim",
-		opts = {
-			smear_between_buffers = true,
-			smear_insert_mode = true,
-			swiftness = 0.8,
-			trailing_stiffness = 0.5,
-			distance_stop_animating = 0.5
-		},
-	},
+	-- {
+	-- 	"sphamba/smear-cursor.nvim",
+	-- 	opts = {
+	-- 		smear_between_buffers = true,
+	-- 		smear_insert_mode = true,
+	-- 		swiftness = 0.8,
+	-- 		trailing_stiffness = 0.5,
+	-- 		distance_stop_animating = 0.5
+	-- 	},
+	-- },
 	{
 		"karb94/neoscroll.nvim",
 		opts = {

@@ -22,3 +22,5 @@ vim.opt.showmatch = true
 vim.opt.mouse = ''
 
 vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', {})
+vim.keymap.set('n', '<leader>ft', ':TodoTelescope<CR>', {})
+vim.keymap.set('n', '<leader>fm', ":lua MiniFiles.open()<CR>", {})
