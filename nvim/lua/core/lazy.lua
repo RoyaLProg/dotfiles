@@ -23,6 +23,10 @@ require("lazy").setup({
 	'drewtempelmeyer/palenight.vim',
 	'nvim-treesitter/nvim-treesitter',
 	{
+		"OXY2DEV/markview.nvim",
+		lazy = false;
+	},
+	{
         "kdheepak/lazygit.nvim",
         -- optional for floating window border decoration
         dependencies = {
@@ -79,10 +83,6 @@ require("lazy").setup({
 	    --   If not available, we use `mini` as the fallback
 		{ "rcarriga/nvim-notify", opts = {stages = 'static'}}
 	    }
-	},
-	{
-		"OXY2DEV/markview.nvim",
-		lazy = false;
 	},
 	-- {
 	-- 	"sphamba/smear-cursor.nvim",
