@@ -5,7 +5,7 @@ alias ll='ls -la'
 alias vi='nvim'
 alias vim='nvim'
 alias h='history'
-alias wtr='curl http://wttr.in/Grand_Junction'
+alias wtr='curl http://wttr.in/Paris'
 
 alias cat='bat --theme=ansi'
 alias dk='docker'
@@ -44,4 +44,4 @@ alias gca='git commit --amend'
 # personna aliases
 
 alias lg 'lazygit'
-
+alias please 'sudo'
